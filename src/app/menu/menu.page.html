@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Menu navegação</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">menu</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+  <ion-list-header>Aprender dicas sobre</ion-list-header>
+  <ion-list>
+    <ion-item button routerLink="/senhas">Criar Senhas Fortes</ion-item>
+    <ion-item button routerLink="/golpes">Evitar Golpes Digitais</ion-item>
+    <ion-item button routerLink="/privacidade">Privacidade no Celular</ion-item>
+    <!-- <ion-item button routerLink="/checklist">Checklist de Segurança</ion-item> -->
+  </ion-list>
+
+  <ion-fab slot="fixed" horizontal="start" vertical="bottom">
+    <ion-fab-button routerLink="/home">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  
+</ion-content>

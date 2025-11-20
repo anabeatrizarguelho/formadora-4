@@ -1,0 +1,81 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Privacidade no Celular</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <h3>Privacidade no Celular: controle o que seu aparelho compartilha</h3>
+
+  <p>Seu celular armazena muitas informações pessoais como fotos, localização, conversas e dados de aplicativos. Por isso, ajustar as configurações de privacidade é essencial para manter sua segurança digital.</p>
+  <p>Veja abaixo as principais áreas que merecem sua atenção</p>
+
+
+  <ion-accordion-group [animated]="false">
+    <ion-accordion value="first">
+      <ion-item slot="header" color="light">
+        <ion-label>1. Permissões de Aplicativos</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <p>Os aplicativos pedem acesso a recursos como câmera, contatos, mensagens e arquivos. Permitir tudo sem revisar pode comprometer sua privacidade.</p>
+        <p class="solucao">Como evitar:</p>
+        <p>▪ Verifique quais permissões cada app realmente precisa. <br>
+           ▪ Negue acessos desnecessários.<br>
+           ▪ Revise permissões periodicamente.
+        </p>
+      </div>
+    </ion-accordion>
+    <ion-accordion value="second">
+      <ion-item slot="header" color="light">
+        <ion-label>2. Localização</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <p>A localização mostra onde você está em tempo real. Se mal configurada, pode compartilhar seus trajetos e rotinas..</p>
+        <p class="solucao">Como evitar:</p>
+        <p>
+          ▪ Ative apenas para apps que precisam (ex.: mapas, transporte).<br>
+          ▪ Prefira “Somente durante o uso”.<br>
+          ▪ Desative a localização global quando não estiver usando
+        </p>
+      </div>
+    </ion-accordion>
+    <ion-accordion value="third">
+      <ion-item slot="header" color="light">
+        <ion-label>3. Microfone</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <p>Alguns apps pedem acesso ao microfone sem necessidade, o que pode representar risco à privacidade.</p>
+
+        <p class="solucao">Como evitar:</p>
+
+        <p>
+          ▪ Permita apenas para apps que precisam falar/ouvir (ex.: WhatsApp, chamadas)..<br>
+          ▪ Desative o microfone para jogos e apps desconhecidos.<br>
+          ▪ Revise a lista de apps com acesso ativo.
+        </p>
+        </div>
+    </ion-accordion>
+
+    <ion-accordion value="four">
+      <ion-item slot="header" color="light">
+        <ion-label>4. Atualizações</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <p>Manter o sistema e aplicativos atualizados corrige falhas de segurança e reduz vulnerabilidades.</p>
+
+        <p class="solucao">Como evitar:</p>
+
+        <p>
+          ▪ Ative atualizações automáticas do sistema.<br>
+          ▪ Atualize apps regularmente pela loja oficial.<br>
+          ▪ Evite instalar APKs de fontes externas.
+        </p>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+
+</ion-content>

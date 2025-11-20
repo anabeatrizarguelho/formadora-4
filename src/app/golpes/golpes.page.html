@@ -1,0 +1,142 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Golpes Digitais</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <h3>Reconheça os Golpes Digitais</h3>
+
+  <p>Os golpes digitais fazem parte do dia a dia de quem usa celular, redes sociais ou faz compras online. Eles acontecem quando criminosos tentam enganar o usuário para roubar informações, dinheiro ou acessar contas pessoais.<p>
+  <p>Esses golpes usam diferentes estratégias, desde mensagens falsas até aplicativos maliciosos e podem envolver qualquer pessoa distraída por apenas alguns segundos.</p>
+  <p>A seguir, você conhece os golpes mais comuns, como eles funcionam e o que fazer para se proteger de cada um deles.</p>
+
+  <ion-accordion-group [animated]="false">
+    <ion-accordion value="first">
+      <ion-item slot="header" color="light">
+        <ion-label>1. Phishing</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <p>Golpistas enviam mensagens falsas fingindo ser empresas conhecidas para roubar senhas, códigos ou dados pessoais.</p>
+        <p class="solucao">Como evitar:</p>
+        <p>▪ Verifique o remetente. <br>
+           ▪ Não clique em links suspeitos.<br>
+           ▪ Verifique o remetente.<br>
+           ▪ Digite o site manualmente no navegador.<br>
+           ▪ Desconfie de mensagens urgentes.
+        </p>
+      </div>
+    </ion-accordion>
+    <ion-accordion value="second">
+      <ion-item slot="header" color="light">
+        <ion-label>2. Golpe do Código de Verificação</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <p>Criminosos pedem o código enviado por SMS para clonar a sua conta (especialmente WhatsApp).</p>
+        <p class="solucao">Como evitar:</p>
+        <p>
+          ▪ Nunca compartilhe códigos de verificação.<br>
+          ▪ Ative a verificação em duas etapas no WhatsApp e em outras contas.
+        </p>
+      </div>
+    </ion-accordion>
+    <ion-accordion value="third">
+      <ion-item slot="header" color="light">
+        <ion-label>3. Engenharia Social</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <p>O golpista ganha sua confiança para convencer você a entregar dados sensíveis.</p>
+
+        <p class="solucao">Como evitar:</p>
+
+        <p>
+          ▪ Não compartilhe informações pessoais com desconhecidos.<br>
+          ▪ Confirme a identidade de quem está pedindo algo.<br>
+          ▪ Desconfie de pedidos incomuns, mesmo vindos de conhecidos.
+        </p>
+      </div>
+    </ion-accordion>
+    <ion-accordion value="four">
+      <ion-item slot="header" color="light">
+        <ion-label>4. Sites Falsos</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <p>Páginas que imitam bancos, lojas ou redes sociais para roubar dados ou senhas.</p>
+
+        <p class="solucao">Como evitar:</p>
+
+        <p>
+          ▪ Confira o endereço do site (https e cadeado).<br>
+          ▪ Pesquise a empresa antes de comprar.<br>
+          ▪ Evite acessar links enviados por mensagens..
+        </p>
+      </div>
+    </ion-accordion>
+    <ion-accordion value="five">
+      <ion-item slot="header" color="light">
+        <ion-label>5. Golpe de Compras Online</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <p>Lojas falsas vendem produtos baratos que nunca são entregues.</p>
+
+        <p class="solucao">Como evitar:</p>
+
+        <p>
+          ▪ Desconfie de preços muito baixos.<br>
+          ▪ Verifique avaliações e CNPJ da loja.<br>
+          ▪ Priorize sites conhecidos e com meios de pagamento seguros.
+        </p>
+      </div>
+    </ion-accordion>
+    <ion-accordion value="six">
+      <ion-item slot="header" color="light">
+        <ion-label>6. Malware (vírus e apps falsos)</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <p>Softwares maliciosos que roubam dados, monitoram o aparelho ou controlam o sistema.</p>
+        <p class="solucao">Como evitar:</p>
+
+        <p>
+          ▪ Baixe apps apenas da loja oficial.<br>
+          ▪ Mantenha o dispositivo atualizado.<br>
+          ▪ Evite clicar em arquivos desconhecidos..
+        </p>
+      </div>
+    </ion-accordion>
+    <ion-accordion value="seven">
+      <ion-item slot="header" color="light">
+        <ion-label>7. Golpe do Pix</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <p>Golpistas usam perfis falsos ou contas invadidas para pedir transferências urgentes.</p>
+        <p class="solucao">Como evitar:</p>
+
+        <p>
+          ▪ Confirme por ligação antes de enviar dinheiro.<br>
+          ▪ Desconfie de pedidos feitos às pressas.<br>
+          ▪ Confira nome e CPF/CNPJ antes de concluir o Pix.
+        </p>
+      </div>
+    </ion-accordion>
+    <ion-accordion value="eight">
+      <ion-item slot="header" color="light">
+        <ion-label>8. Assinaturas Ocultas</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <p>Apps que parecem gratuitos, mas ativam cobranças automáticas sem o usuário perceber.</p>
+        <p class="solucao">Como evitar:</p>
+
+        <p>
+          ▪ Leia as condições antes de instalar o app.<br>
+          ▪ Veja avaliações na loja.<br>
+          ▪ Verifique regularmente sua lista de assinaturas.
+        </p>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+  
+
+</ion-content>

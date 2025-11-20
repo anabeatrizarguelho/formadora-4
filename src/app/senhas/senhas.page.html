@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Senhas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding" color="light">
+
+  <h3>Sua primeira linha de defesa começa pela senha</h3>
+  <p>Criar senhas fortes é essencial para manter suas contas seguras e proteger seus dados pessoais. Uma senha bem construída dificulta o acesso indevido às suas informações e reduz o risco de golpes digitais. Para isso, é importante utilizar combinações variadas de caracteres, evitar informações fáceis de adivinhar e adotar boas práticas que aumentem a segurança das suas contas.<p>
+
+  <p>A seguir, você encontra algumas orientações claras sobre como criar senhas seguras, dicas práticas para facilitar esse processo, exemplos de senhas fortes e a opção de utilizar um gerador automático.</p>
+
+  <ion-accordion-group [animated]="false">
+    <ion-accordion value="first">
+      <ion-item slot="header" color="light">
+        <ion-label>Dicas práticas</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <p>▪ Use pelo menos 8 a 12 caracteres.</p>
+
+        <p>▪ Misture letras maiúsculas, minúsculas, números e símbolos.</p>
+        <p>▪ Não use informações pessoais (nome, data de nascimento, CPF, nome do pet).</p>
+        <p>▪ Não repita a mesma senha em vários sites.</p>
+        <p>▪ Troque a senha periodicamente.</p>
+        <p>▪ Ative a autenticação em dois fatores (2FA) sempre que possível.</p>
+        <p>▪ Evite sequências óbvias: “123456”, “abcdef”, “qwerty”</p>
+        <p>▪ Prefira um gerenciador de senhas se tiver muitas contas.</p>
+      </div>
+    </ion-accordion>
+    <ion-accordion value="second">
+      <ion-item slot="header" color="light">
+        <ion-label>Exemplos de senhas fortes</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <p>Senhas que misturam letras maiúsculas e minúsculas, números e símbolos, criam combinações difíceis de adivinhar. Exemplo:</p>
+        <p>▪ Gato@Sol57#</p>
+        <p>Além disso, utilizar palavras inesperadas e substituições criativas impede que a senha siga padrões comuns. Exemplo:</p>
+        <p>▪ V3nt0!Azul2024</p>
+        <p>Essa variedade aumenta muito a complexidade, tornando a senha mais resistente contra ataques e tentativas de adivinhação.</p>
+      </div>
+    </ion-accordion>
+    <ion-accordion value="third">
+      <ion-item slot="header" color="light">
+        <ion-label>Gerador de senha</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <p>Depois de entender as principais regras para criar senhas seguras, conferir algumas dicas práticas e analisar exemplos de boas combinações, você pode facilitar ainda mais esse processo usando um gerador automático. <br>Essa ferramenta cria senhas fortes de forma rápida e sem esforço.</p>
+        <p>Experimente testar o nosso gerador de senhas abaixo e obtenha uma combinação segura pronta para usar.</p>
+        <ion-button class="btn-senha" expand="block" (click)="gerarSenha()">Gerar senha forte</ion-button>
+
+        <div *ngIf="senhaGerada" class="senha-box">
+          <strong>Senha gerada:</strong> {{ senhaGerada }}
+        </div>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+</ion-content>
