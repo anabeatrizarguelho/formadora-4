@@ -1,0 +1,127 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Quiz de Proteção de Dados</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Quiz de Proteção de Dados</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Tela Inicial -->
+  <div class="quiz-container" *ngIf="!quizStarted && !quizFinished">
+    <ion-card class="welcome-card">
+      <ion-card-header>
+        <ion-card-title class="welcome-title">🛡️ Bem-vindo ao Quiz!</ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="welcome-content">
+        <p>Teste seus conhecimentos sobre proteção de dados e segurança digital!</p>
+        <p class="quiz-info">
+          <strong>10 perguntas</strong> sobre as dicas que você aprendeu no app.
+        </p>
+        <p class="quiz-description">
+          Responda com base no que você aprendeu e descubra o seu nível de segurança digital.
+        </p>
+        <ion-button expand="block" class="start-btn" (click)="startQuiz()">
+          Começar Quiz
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Quiz em Progresso -->
+  <div class="quiz-container" *ngIf="quizStarted && !quizFinished">
+    <div class="progress-section">
+      <div class="question-counter">
+        Pergunta {{ currentQuestionIndex + 1 }} de {{ questions.length }}
+      </div>
+      <ion-progress-bar 
+        type="determinate" 
+        [value]="getProgress() / 100"
+        class="progress-bar">
+      </ion-progress-bar>
+    </div>
+
+    <ion-card class="question-card">
+      <ion-card-header>
+        <ion-card-title class="question-title">
+          {{ getCurrentQuestion().text }}
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <div class="options-container">
+          <button 
+            *ngFor="let option of getCurrentQuestion().options; let i = index"
+            class="option-button"
+            [class.selected]="isAnswerSelected(i)"
+            (click)="selectAnswer(i)">
+            <span class="option-letter">{{ getOptionLetter(i) }}</span>
+            <span class="option-text">{{ option }}</span>
+          </button>
+        </div>
+
+        <div class="navigation-buttons">
+          <ion-button 
+            fill="outline" 
+            (click)="previousQuestion()"
+            [disabled]="currentQuestionIndex === 0">
+            ← Anterior
+          </ion-button>
+
+          <ion-button 
+            fill="solid" 
+            (click)="nextQuestion()"
+            [class.final-button]="currentQuestionIndex === questions.length - 1">
+            {{ currentQuestionIndex === questions.length - 1 ? 'Finalizar' : 'Próxima' }} →
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- Resultado Final -->
+  <div class="quiz-container" *ngIf="quizFinished && quizResult">
+    <ion-card class="result-card">
+      <ion-card-header>
+        <ion-card-title class="result-title">
+          {{ quizResult.emoji }} Resultado Final
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content class="result-content">
+        <div class="score-display">
+          <div class="score-number">{{ quizResult.score }}/{{ quizResult.total }}</div>
+          <div class="score-percentage">{{ quizResult.percentage | number: '1.0-0' }}%</div>
+        </div>
+
+        <div class="result-message">
+          <p class="message-text">{{ quizResult.message }}</p>
+        </div>
+
+        <div class="result-feedback">
+          <div *ngIf="quizResult.score === 10 || quizResult.score === 9" class="feedback-excellent">
+            <p>Parabéns! Você domina os conceitos de proteção de dados. Continue aplicando essas práticas para manter seus dados seguros!</p>
+          </div>
+          <div *ngIf="quizResult.score >= 6 && quizResult.score <= 8" class="feedback-good">
+            <p>Você tem bom conhecimento, mas há alguns pontos que podem ser melhorados. Revise as dicas sobre segurança digital!</p>
+          </div>
+          <div *ngIf="quizResult.score < 6" class="feedback-needs-improvement">
+            <p>Você precisa reforçar seu conhecimento sobre proteção de dados. Leia com atenção as dicas disponíveis no app e tente novamente!</p>
+          </div>
+        </div>
+
+        <ion-button expand="block" class="restart-btn" (click)="restartQuiz()">
+          🔄 Tentar Novamente
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+</ion-content>
